@@ -1,0 +1,21 @@
+.input-field-container {
+    position: relative;
+}
+
+.input-field-icon {
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+}
+
+.input-field-invalid-icon {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+}
+
+.error-message-container {
+    font-size: 90%;
+    position: absolute;
+    bottom: -20px;
+}
