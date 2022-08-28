@@ -20,7 +20,7 @@ export default function Navigation() {
         <nav id='site-nav' className='site-header-navigation'>
             <NavLink to='/' className='header-logo'>
                 <img src="casino_logo.png" alt="" />
-                Casino.com
+                Viva Las Vegas
             </NavLink>
             <button className='nav-dropdown-btn' onClick={navExpandHandler}>
                 <FontAwesomeIcon
