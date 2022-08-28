@@ -1,0 +1,10 @@
+.members-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.members-article-ul {
+    margin: 0;
+    padding: 0;
+}
