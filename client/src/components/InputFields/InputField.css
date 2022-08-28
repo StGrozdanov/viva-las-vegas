@@ -19,3 +19,12 @@
     position: absolute;
     bottom: -20px;
 }
+
+@media all and (max-width: 450px) {
+    .error-message-container {
+        font-size: 72%;
+    }
+    .pass-span {
+        bottom: -28px;
+    }
+}

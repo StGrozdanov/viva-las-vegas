@@ -48,7 +48,7 @@ function InputField({ placeHolder, validateHandler, inputHandler }) {
                 />
             }
             <span
-                className='error-message-container'
+                className={'error-message-container'}
                 style={{ color: !isValid ? 'orange' : '', display: isValid ? 'none' : '' }}
             >
                 {onErrorMessage}

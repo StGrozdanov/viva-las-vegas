@@ -12,3 +12,9 @@
 .form-button:hover {
     transition: ease-in-out 0.5s;
 }
+
+@media all and (max-width: 500px) {
+    .form-button {
+        font-size: 100%;
+    }
+}
