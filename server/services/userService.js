@@ -1,6 +1,10 @@
 const User = require('../models/User');
 
-const getAllUsers = (limit, skip) => limit ? User.find({}).limit(limit).skip(skip * limit) : User.find({});
+const getAllUsers = (limit, skip) => {
+    return limit
+        ? User.find({}).limit(limit).skip(skip * limit).select('username -_id')
+        : User.find({}).select('username -_id');
+}
 
 const findByUsername = (username) => {
     return User.exists({
