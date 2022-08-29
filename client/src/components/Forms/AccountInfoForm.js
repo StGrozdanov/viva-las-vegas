@@ -3,7 +3,8 @@ import './MultiStepModalForm.css';
 import './AccountInfoForm.css';
 import FormDataButton from '../Buttons/FormDataButton';
 import InputField from '../InputFields/InputField';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { register } from '../../services/authenticationService';
 
 function AccountInfoForm({ nextStepHandler }) {
     const [firstNameIsValid, setFirstNameIsValid] = useState(false);
@@ -33,8 +34,14 @@ function AccountInfoForm({ nextStepHandler }) {
     }
     function continueRegistrationHandler() {
         if (allValidationsHavePassed) {
-            console.log(userData);
-            nextStepHandler();
+            register(userData)
+                .then(response => {
+                    response.json();
+                })
+                .then(nextStepHandler())
+                .catch(err => {
+                    console.log(err);
+                });
         }
     }
     function addUserData(fieldData) {

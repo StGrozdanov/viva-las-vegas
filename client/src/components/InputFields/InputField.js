@@ -51,9 +51,9 @@ function InputField({ placeHolder, validateHandler, inputHandler }) {
         if (validationCriteriaIsMet && !uniqueConstraintFails) {
             setIsValid(true);
             validateHandler(true);
-            const inputData = {}
+            const inputData = {};
             inputData[placeHolder] = input;
-            inputHandler(inputData)
+            inputHandler(inputData);
         } else {
             setIsValid(false);
             validateHandler(false);
