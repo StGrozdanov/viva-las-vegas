@@ -1,12 +1,14 @@
 import { faCircleCheck, faUserTie, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import './MultiStepModalForm.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AccountInfoForm from './AccountInfoForm';
 import FeedbackForm from './FeedbackForm';
 import PersonalInfoForm from './PersonalInfoForm';
 import MultiStepFormNavItem from './MultiStepFormNavItem';
 import ModalForm from './ModalForm';
 import secondStepFeedbackFormProperties from '../../constants/secondStepFeedbackFormProperties';
+import { getCurrentUserUsername, getUserToken, userRegistrationIsCompleted } from '../../services/authenticationService';
+import { useNavigate } from 'react-router-dom';
 
 const formSteps = {
     0: (nextStepHandler) => <AccountInfoForm nextStepHandler={nextStepHandler} />,
@@ -16,6 +18,20 @@ const formSteps = {
 
 function MultiStepForm({ step = 0 }) {
     const [currentStep, setCurrentStep] = useState(step);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (getUserToken() !== null) {
+            userRegistrationIsCompleted(getCurrentUserUsername())
+            .then(response => {
+                if (response.registrationCompleted === false) {
+                    setCurrentStep(1);
+                } else {
+                    navigate('/registration-success');
+                }
+            });
+        }
+    }, []);
 
     const content = formSteps[currentStep];
 

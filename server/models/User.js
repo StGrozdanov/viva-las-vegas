@@ -39,7 +39,6 @@ const userSchema = new Schema({
     },
     address2: {
         type: String,
-        minlength: [4, 'Address cannot be less than 4 symbols long.'],
     },
     city: {
         type: String,

@@ -46,7 +46,7 @@ function InputField({ placeHolder, validateHandler, inputHandler }) {
 
     function validateInputHandler() {
         const validationCriteriaIsMet = VALIDATION_CRITERIA[placeHolder](input);
-        const uniqueConstraintFails = emailIsTaken;
+        const uniqueConstraintFails = emailIsTaken || usernameIsTaken;
 
         if (validationCriteriaIsMet && !uniqueConstraintFails) {
             setIsValid(true);
