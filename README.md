@@ -60,6 +60,8 @@ Users:
 ## Public address
 https://viva-las-vegas-ba1bf.web.app/
 
+Be aware! Backend is deployed in heroku and might be in sleep state when you visit the app. There are no loading spinners and interractions - so be patient, until we implement the features in the future :) 
+
 ## How to run the project locally
 
 ### Before you start:
