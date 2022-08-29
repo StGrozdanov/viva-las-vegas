@@ -33,4 +33,9 @@ router.put('/:username', isAuthorized(), async (request, response) => {
     }
 });
 
+router.get('/count/all', async (request, response) => {
+    const usersCount = await userService.count();
+    response.json({ count: usersCount })
+});
+
 module.exports = router;

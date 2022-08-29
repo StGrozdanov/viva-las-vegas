@@ -27,9 +27,12 @@ const updateUserInfo = async (username, userData) => {
     }
 }
 
+const count = () => User.countDocuments({}).exec();
+
 module.exports = {
     getAllUsers,
     findByUsername,
     findByEmail,
     updateUserInfo,
+    count,
 };
