@@ -10,6 +10,13 @@ const USERS_END_POINTS = {
     EXISTS_BY_USERNAME: (username) => `${USER_END_POINT}/exists-by-username/${username}`,
     EXISTS_BY_EMAIL: (email) => `${USER_END_POINT}/exists-by-email/${email}`,
     UPDATE_USER_DATA: (username) => `${USER_END_POINT}/${username}`,
+    UPDATE_USER_DATA: (username) => `${USER_END_POINT}/${username}`,
+    COUNT_USERS: `${USER_END_POINT}/count/all`,
+}
+
+export async function countUsers() {
+    const response = await fetch(BASE_URL + USERS_END_POINTS.COUNT_USERS);
+    return handleRequest(response, COULD_NOT_FETCH_USERS);
 }
 
 export async function getAllUsers(page) {

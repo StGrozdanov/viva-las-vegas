@@ -1,15 +1,23 @@
 import './Members.css';
 import PaginationBar from "../Pagination/PaginationBar";
 import { useEffect, useState } from 'react';
-import { getAllUsers } from '../../services/userService';
+import { countUsers, getAllUsers } from '../../services/userService';
+import { useLocation } from 'react-router-dom';
 
 function Members() {
     const [users, setUsers] = useState([{}]);
+    const [usersCount, setUsersCount] = useState([{}]);
+    const location = useLocation();
 
     useEffect(() => {
-        getAllUsers()
+        const currentPage = location.search.split('=')[1] || 1;
+        getAllUsers(currentPage)
             .then(users => setUsers(users))
             .catch(err => console.log(err));
+    }, [location]);
+
+    useEffect(() => {
+        countUsers().then(users => setUsersCount(users.count)).catch(err => console.log(err));
     }, []);
 
     return (
@@ -23,7 +31,7 @@ function Members() {
                         : <h4>No members yet. Be the first one!</h4>
                 }
             </ul>
-            <PaginationBar usersCount={users.length} />
+            <PaginationBar usersCount={usersCount} />
         </article>
     );
 }
