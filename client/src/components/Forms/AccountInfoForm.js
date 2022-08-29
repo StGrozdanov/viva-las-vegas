@@ -3,7 +3,7 @@ import './MultiStepModalForm.css';
 import './AccountInfoForm.css';
 import FormDataButton from '../Buttons/FormDataButton';
 import InputField from '../InputFields/InputField';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function AccountInfoForm({ nextStepHandler }) {
     const [firstNameIsValid, setFirstNameIsValid] = useState(false);
