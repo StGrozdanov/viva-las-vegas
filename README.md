@@ -5,7 +5,7 @@
 </p>
 
 ## Project Concept
-The assigment was to create a 3-step registration page. Because users have the option to not complete all of the steps in order to play i decided to expand the app, in order to be as close to the real world experience as possible.
+The assignment was to create a 3-step registration page. Because users have the option to not complete all of the steps in order to play i decided to expand the app, in order to be as close to the real world experience as possible.
 
 Landing page with casino style glowing button greets the visitors. Upon clicking the Play Now button - sign up registration form appears. But what if the user is already registered? Register again is surelly not a option, so there is a login option on the form as well.
 
