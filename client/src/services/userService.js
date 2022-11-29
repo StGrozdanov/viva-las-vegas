@@ -2,7 +2,7 @@ import { COULD_NOT_FETCH_USERS } from "../constants/fetchMessages";
 import { handleRequest } from "../utils/requestHandler";
 import { BASE_URL, MODIFIYNG_OPERATIONS_HEADERS } from "./backendService";
 
-export const USERS_PER_PAGE = 8;
+export const USERS_PER_PAGE = 5;
 export const USER_END_POINT = '/users';
 
 const USERS_END_POINTS = {

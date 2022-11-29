@@ -17,10 +17,12 @@ function PaginationBar({ usersCount = 0 }) {
 
   let items = [];
   for (let number = 1; number <= totalPages; number++) {
+    let isActive = number === active;
+
     items.push(
       <button
         key={number}
-        active={number === active}
+        active={isActive.toString()}
         disabled={currentPage === number}
         onClick={() => buttonClickHandler(number)}>
         {number}

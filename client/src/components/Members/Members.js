@@ -1,4 +1,7 @@
 import './Members.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { v4 as uuid } from 'uuid';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import PaginationBar from "../Pagination/PaginationBar";
 import { useEffect, useState } from 'react';
 import { countUsers, getAllUsers } from '../../services/userService';
@@ -27,7 +30,14 @@ function Members() {
                 {
                     users.length > 0
                         ?
-                        users.map(user => <li key={user.username}>{user.username}</li>)
+                        users.map(user => (
+                            <div key={uuid()}>
+                                <FontAwesomeIcon icon={faStar} color={'green'} />
+                                <span className='members-article-ul-username-span'>
+                                    {user.username}
+                                </span>
+                            </div>
+                        ))
                         : <h4>No members yet. Be the first one!</h4>
                 }
             </ul>
