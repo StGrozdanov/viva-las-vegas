@@ -12,6 +12,8 @@ function FormDataButton({
     isDisabled,
     href
 }) {
+    color = color == 'orange' && isDisabled ? 'green' : 'orange';
+
     function hoverHandler(e) {
         if (!isDisabled) {
             e.target.style.background = hover;
